@@ -35,14 +35,12 @@ device (SD/eMMC card or USB/SATA disk) on target board or on host machine.
 
 ## Supported platforms
 ----------------------
+- __iMX CompuLab Boards__:  
+ucm-imx8m-plus-sbev, etc
+
 - __iMX platform__:  
 imx6qpsabresd, imx6qsabresd, imx6sllevk, imx7ulpevk, imx8mmevk, imx8mnevk, imx8mpevk,  
 imx8mqevk, imx8qmmek, imx8qxpmek, imx8ulpevk, imx93evk, imx91frdm, imx93frdm, etc
-
-- __Layerscape platform__:  
-ls1012ardb, ls1012afrwy, ls1028ardb, ls1043ardb, ls1046ardb, ls1046afrwy,
-ls1088ardb, ls2088ardb, ls2160ardb, lx2162aqds, etc
-
 
 ## Flexbuild Usage
 ------------------
@@ -60,9 +58,8 @@ Usage: bld -m <machine>
 
 Most used example with automated build:
 ```
- bld -m imx8mpevk                # automatically build BSP + kernel + NXP-specific components + Debian RootFS for imx8mpevk platform
- bld -m lx2160ardb               # same as above, for lx2160ardb platform
- bld auto -p IMX (or -p LS)      # same as above, for all arm64 iMX (or Layerscape) platforms
+ bld -m ucm-imx8m-plus-sbev        # automatically build BSP + kernel + NXP-specific components + Debian RootFS for CompuLab i.MX8MP board
+ bld rfs -r debian:desktop -p IMX  # generate Debian-based Desktop rootfs  (with more graphics/multimedia packages for Desktop)
 ```
 
 Most used example with separate command:
