@@ -37,8 +37,8 @@ DEFAULT_SOC_FAMILY: IMX
 FORCE_BUILD_IN_DOCKER: y
 
 # choose one of the 3 ways to fetch/update repo for various use cases
-UPDATE_REPO_PER_TAG: n
-UPDATE_REPO_PER_BRANCH: y
+UPDATE_REPO_PER_TAG: y
+UPDATE_REPO_PER_BRANCH: n
 UPDATE_REPO_PER_COMMIT: n
 
 
@@ -73,7 +73,7 @@ repo:
 
   uboot:
     url:  https://github.com/compulab-yokneam/u-boot-compulab.git
-    branch:  u-boot-compulab_v2023.04
+    tag:  fb-2024.12
 
   rcw:
     url:  https://github.com/nxp-qoriq/rcw.git
@@ -136,7 +136,7 @@ repo:
 # kernel and modules git repositories
   linux:
     url:  https://github.com/compulab-yokneam/linux-compulab.git
-    branch:  linux-compulab_v6.6.52
+    tag:  fb-2024.12
 
   cryptodev_linux:
     url:  https://github.com/cryptodev-linux/cryptodev-linux.git
