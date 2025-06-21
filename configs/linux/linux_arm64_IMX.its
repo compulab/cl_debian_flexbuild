@@ -43,6 +43,56 @@
 			compression = "none";
 			load = <0x90000000>;
 		};
+
+		ucm-imx8m-plus-dtb {
+			description = "Flattened Device Tree blob";
+			data = /incbin/("../../build/linux/kernel/arm64/IMX/ucm-imx8m-plus.dtb");
+			type = "flat_dt";
+			arch = "arm64";
+			os = "linux";
+			compression = "none";
+			load = <0x90000000>;
+		};
+
+		mcm-imx8m-plus-dtb {
+			description = "Flattened Device Tree blob";
+			data = /incbin/("../../build/linux/kernel/arm64/IMX/mcm-imx8m-plus.dtb");
+			type = "flat_dt";
+			arch = "arm64";
+			os = "linux";
+			compression = "none";
+			load = <0x90000000>;
+		};
+
+		som-imx8m-plus-dtb {
+			description = "Flattened Device Tree blob";
+			data = /incbin/("../../build/linux/kernel/arm64/IMX/som-imx8m-plus.dtb");
+			type = "flat_dt";
+			arch = "arm64";
+			os = "linux";
+			compression = "none";
+			load = <0x90000000>;
+		};
+
+		iot-gate-imx8plus-dtb {
+			description = "Flattened Device Tree blob";
+			data = /incbin/("../../build/linux/kernel/arm64/IMX/iot-gate-imx8plus.dtb");
+			type = "flat_dt";
+			arch = "arm64";
+			os = "linux";
+			compression = "none";
+			load = <0x90000000>;
+		};
+
+		iotdin-imx8p-dtb {
+			description = "Flattened Device Tree blob";
+			data = /incbin/("../../build/linux/kernel/arm64/IMX/iotdin-imx8p.dtb");
+			type = "flat_dt";
+			arch = "arm64";
+			os = "linux";
+			compression = "none";
+			load = <0x90000000>;
+		};
 	};
 
 	configurations {
@@ -50,6 +100,36 @@
 			description = "Boot Linux kernel";
 			kernel = "kernel";
 			fdt = "ucm-imx8m-plus-sbev-dtb";
+			ramdisk = "initrd";
+		};
+		ucm-imx8m-plus {
+			description = "boot linux kernel";
+			kernel = "kernel";
+			fdt = "ucm-imx8m-plus-dtb";
+			ramdisk = "initrd";
+		};
+		mcm-imx8m-plus {
+			description = "boot linux kernel";
+			kernel = "kernel";
+			fdt = "mcm-imx8m-plus-dtb";
+			ramdisk = "initrd";
+		};
+		som-imx8m-plus {
+			description = "boot linux kernel";
+			kernel = "kernel";
+			fdt = "som-imx8m-plus-dtb";
+			ramdisk = "initrd";
+		};
+		iot-gate-imx8plus {
+			description = "boot linux kernel";
+			kernel = "kernel";
+			fdt = "iot-gate-imx8plus-dtb";
+			ramdisk = "initrd";
+		};
+		iotdin-imx8p {
+			description = "boot linux kernel";
+			kernel = "kernel";
+			fdt = "iotdin-imx8p-dtb";
 			ramdisk = "initrd";
 		};
 	};
