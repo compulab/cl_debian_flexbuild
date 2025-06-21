@@ -12,7 +12,7 @@ linux:
 	if echo $$curbrch | grep -qE '\(HEAD'; then \
 	    $(call fbprint_w,"Please set proper tag/branch name in kernel repo $(KERNEL_PATH)") && exit 1; \
 	fi && \
-	if [ -d $(FBDIR)/patch/linux ] && [ ! -f .patchdone ]; then \
+	if [ -d $(FBDIR)/_patch/linux ] && [ ! -f .patchdone ]; then \
             git am $(FBDIR)/patch/linux/*.patch && touch .patchdone; \
         fi && \
 	$(call fbprint_n,"Building $(KERNEL_TREE) with $$curbrch") && \

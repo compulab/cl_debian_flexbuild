@@ -13,7 +13,7 @@ uboot u-boot:
 	 curbrch=`cd $(BSPDIR)/uboot && git branch | grep ^* | cut -d' ' -f2` && \
 	 $(call fbprint_n,"Building u-boot $$curbrch for $(MACHINE)") && \
 	 cd $(BSPDIR)/uboot && \
-	 if [ -d $(FBDIR)/patch/uboot ] && [ ! -f .patchdone ]; then \
+	 if [ -d $(FBDIR)/_patch/uboot ] && [ ! -f .patchdone ]; then \
 	     git am $(FBDIR)/patch/uboot/*.patch && touch .patchdone; \
 	 fi && \
 	 if [ "$(BOOTTYPE)" = tfa -a "$(COT)" = arm-cot-with-verified-boot ]; then \
